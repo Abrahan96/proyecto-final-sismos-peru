@@ -1,0 +1,15 @@
+pandas>=2.0
+pyarrow>=14.0
+requests>=2.31
+pandera>=0.20
+geopandas>=1.0
+pyogrio>=0.7
+shapely>=2.0
+# streamlit: se requiere una versión 2025+ que soporte el parámetro `width`
+# en st.plotly_chart/st.dataframe (reemplaza a use_container_width, ya
+# removido de st.plotly_chart en versiones 2026). Instala la más reciente:
+# pip install --upgrade streamlit
+streamlit>=1.35
+# plotly: se requiere >=5.24 para que exista px.scatter_map (reemplazo de
+# px.scatter_mapbox, usado en dashboard/app.py)
+plotly>=5.24

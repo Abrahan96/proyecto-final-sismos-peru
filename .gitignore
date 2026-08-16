@@ -1,0 +1,12 @@
+.venv/
+venv/
+env/
+.env
+.env.*
+!.env.example
+__pycache__/
+*.pyc
+data/bronze/*.parquet
+data/silver/*.parquet
+data/gold/*.parquet
+logs/*.log
