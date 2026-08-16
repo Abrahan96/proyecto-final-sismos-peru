@@ -235,7 +235,7 @@ el z-score por departamento para identificar eventos atípicos.
 
 ### Enlaces de entrega
 
-- **Repositorio público:** https://github.com/ManuelFanola/sismos_peru_etl
+- **Repositorio público:** https://github.com/Abrahan96/proyecto-final-sismos-peru.git
 - **Dashboard en Streamlit Cloud:** `PENDIENTE: pegar aquí el enlace público después del despliegue`
 
 > Antes de entregar, reemplaza el texto pendiente por la URL real con formato
