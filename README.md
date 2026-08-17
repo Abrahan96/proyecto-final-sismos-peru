@@ -32,6 +32,14 @@ sismos_peru_etl/
 │   ├── normalization.py         # z-score de magnitud AGRUPADO POR DEPARTAMENTO
 │   └── writer.py
 │
+├── dashboard/
+│   ├── app.py                  # orquestador delgado de Streamlit
+│   ├── sidebar.py              # filtros y selecciones
+│   ├── resumen.py              # KPIs y avisos
+│   ├── etl_runner.py           # ejecución del ETL desde la interfaz
+│   ├── data_loader.py          # carga, filtros y z-score dinámico
+│   └── tabs/                   # un módulo por pestaña del dashboard
+│
 ├── data/{bronze,silver,gold}/
 ├── geo/                       # cache local del .gpkg de GADM (se descarga solo)
 ├── logs/
@@ -42,7 +50,7 @@ sismos_peru_etl/
 
 ## Instalación
 
-**Versión requerida y probada: Python 3.14 (64 bits).**
+**Versión requerida y probada: Python 3.14.**
 
 ### macOS / Linux
 
@@ -236,11 +244,8 @@ el z-score por departamento para identificar eventos atípicos.
 ### Enlaces de entrega
 
 - **Repositorio público:** https://github.com/Abrahan96/proyecto-final-sismos-peru.git
-- **Dashboard en Streamlit Cloud:** `PENDIENTE: pegar aquí el enlace público después del despliegue`
+- **Dashboard en Streamlit Cloud:** https://proyecto-final-sismos-peru.streamlit.app/
 
-> Antes de entregar, reemplaza el texto pendiente por la URL real con formato
-> `https://<nombre-app>.streamlit.app`. El enlace no se puede generar solamente
-> modificando el código: se debe publicar desde una cuenta de Streamlit Cloud.
 
 Filtros disponibles en la barra lateral, todos como listas de selección
 (multiselect) — sin selección = sin filtrar esa dimensión:
@@ -302,12 +307,3 @@ nuevos. Si falla, muestra el motivo y el log completo en un panel
 expandible, sin romper el resto del dashboard. Una actualización
 incremental normal tarda segundos; si nunca corriste el ETL antes (o
 faltan varios días), puede tardar más.
-
-## Próximos pasos
-
-- Dashboard en Streamlit sobre `data/gold/sismos_features.parquet` y
-  `data/gold/sismos_agregaciones_departamento_anio.parquet`. **(Implementado, ver sección arriba)**
-- Extender `geo_enrichment.py` a nivel provincia/distrito (ADM2/ADM3) si
-  se necesita mayor granularidad geográfica. **(Implementado)**
-- Expandir el bbox de `config.py` para incluir otros países (GADM ya
-  soporta esto sin cambiar de librería).
