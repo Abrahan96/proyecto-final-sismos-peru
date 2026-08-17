@@ -14,7 +14,7 @@ import streamlit as st
 
 def render(df_filtrado) -> None:
     st.subheader("Magnitud promedio por año")
-    top_n = st.slider("Mostrar top N departamentos por cantidad de sismos", 3, 15, 6, key="topn_evol")
+    top_n = st.slider("Mostrar top N departamentos por cantidad de sismos", 3, 26, 6, key="topn_evol")
     conteo_deptos = df_filtrado["departamento"].value_counts()
     conteo_deptos = conteo_deptos[conteo_deptos > 0]  # excluir categorías con 0 tras filtrar
     top_deptos = conteo_deptos.head(top_n).index.tolist()
