@@ -44,7 +44,6 @@ sismos_peru_etl/
 ├── geo/                       # cache local del .gpkg de GADM (se descarga solo)
 ├── logs/
 ├── requirements.txt
-├── run_daily.bat
 └── .gitignore
 ```
 
